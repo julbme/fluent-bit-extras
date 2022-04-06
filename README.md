@@ -10,21 +10,21 @@ This repository provides some extra parsers and lua scripts to be used in [fluen
 
 ### logging.lua
 
-| Function name   | Description                                                                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  Function name  |                                                                      Description                                                                      |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `compute_level` | This method map log levels to the ones in [`error`, `warning`, `info`, `debug`, `trace`] or set it to `info` if `level` is not present in the record. |
 
 ### record.lua
 
-| Function name | Description                                                     |
-| ------------- | --------------------------------------------------------------- |
+| Function name |                           Description                           |
+|---------------|-----------------------------------------------------------------|
 | `print`       | This method prints the record on stdout without any alteration. |
 | `drop`        | This method drops the record.                                   |
 
 ### syslog.lua
 
-| Function name      | Description                                                                                                                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   Function name    |                                                                                         Description                                                                                          |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `compute_priority` | Gets the priority from the message (`pri`) and adds in the record the `syslogPriorityNumber`; `syslogFacilityNumber`, `syslogFacilityCode`, `syslogSeverityNumber` and `syslogSeverityCode`. |
 
 Where:
@@ -37,6 +37,7 @@ Where:
 
 ### tag.lua
 
-| Function name   | Description                        |
-| --------------- | ---------------------------------- |
+|  Function name  |            Description             |
+|-----------------|------------------------------------|
 | `add_to_record` | Add the current tag in the record. |
+

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -14,12 +15,7 @@
 	<name>Julb.me :: Fluent bit extras</name>
 	<description>This project provides an archive with utility Fluent Bit configuration files.</description>
 
-	<properties>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
-
-		<sonar.projectKey>julbme_fluent-bit-extras</sonar.projectKey>
-	</properties>
+	<url>https://julbme.github.io/fluent-bit-extras/</url>
 
 	<licenses>
 		<license>
@@ -29,18 +25,16 @@
 		</license>
 	</licenses>
 
-	<url>https://julbme.github.io/fluent-bit-extras/</url>
-
-	<issueManagement>
-		<url>https://github.com/julbme/fluent-bit-extras/issues</url>
-		<system>GitHub Issues</system>
-	</issueManagement>
-
 	<scm>
-		<url>https://github.com/julbme/fluent-bit-extras</url>
 		<connection>scm:git:git://github.com/julbme/fluent-bit-extras.git</connection>
 		<developerConnection>scm:git:git@github.com:julbme/fluent-bit-extras.git</developerConnection>
+		<url>https://github.com/julbme/fluent-bit-extras</url>
 	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/julbme/fluent-bit-extras/issues</url>
+	</issueManagement>
 
 	<distributionManagement>
 		<site>
@@ -50,24 +44,21 @@
 		</site>
 	</distributionManagement>
 
+	<properties>
+		<sonar.projectKey>julbme_fluent-bit-extras</sonar.projectKey>
+	</properties>
+
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.jreleaser</groupId>
-				<artifactId>jreleaser-maven-plugin</artifactId>
-				<configuration>
-					<configFile>jreleaser.yml</configFile>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
+						<phase>package</phase>
 						<configuration>
 							<appendAssemblyId>false</appendAssemblyId>
 							<descriptors>
@@ -77,6 +68,13 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.jreleaser</groupId>
+				<artifactId>jreleaser-maven-plugin</artifactId>
+				<configuration>
+					<configFile>jreleaser.yml</configFile>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-</project> 
+</project>
